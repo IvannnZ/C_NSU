@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "stdlib.h"
 
@@ -24,7 +23,7 @@ void is_null(char *str){
 }
 char *rem_space(char *str){
     int c=0;
-    for (int i = 0; i<len(str);i++){
+    for (int i = 0  ; i<len(str);i++){
         if (str[i]==' '){
             c++;
         }
@@ -67,6 +66,8 @@ int main() {
 
     printf("Enter line: ");
     getline(&str, &lens, stdin);// I googling this function to make dynamic len of str
+
+
 
     if (palindrom(str)){
         printf("It`s palendrom");
