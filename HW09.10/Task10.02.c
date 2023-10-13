@@ -40,6 +40,7 @@ void is_null(char *str){
         exit(1);
     }
 }
+
 char *trim(char *str){
     int c1 = len1(str);
     char *str2 = (char*) malloc(len(str)+2- len1(str)- len2(str));
