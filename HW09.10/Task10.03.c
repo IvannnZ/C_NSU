@@ -92,12 +92,15 @@ char **split(char *str, int *lenret){
     str = trim(str);
     *lenret = count(str, ' ');
     char **arr_str = (char **) malloc(sizeof(char*) * (*lenret));
+    is_null(str);
     int c=1, c2=0;
     char *str3 = (char*)malloc(sizeof(char) * lenfr(str, 0));
+    is_null(str);
     arr_str[0]=str3;
     for (int i = 0; i<len(str); i++){
         if (str[i]==' '){
             str3 = (char*)malloc(sizeof(char) * lenfr(str, i));
+            is_null(str);
             arr_str[c] = str3;
             c2=0;
             c++;
@@ -116,6 +119,8 @@ int main() {
 
     printf("Enter line: ");
     getline(&str, &lens, stdin);// I googling this function to make dynamic len of str
+
+    is_null(str);
 
     int len;
     char **str_arr = split(str, &len);

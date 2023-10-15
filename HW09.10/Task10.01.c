@@ -67,7 +67,7 @@ int main() {
     printf("Enter line: ");
     getline(&str, &lens, stdin);// I googling this function to make dynamic len of str
 
-
+    is_null(str);
 
     if (palindrom(str)){
         printf("It`s palendrom");
