@@ -11,13 +11,13 @@ void printArr(int* a, size_t al) {
 
 void is_NULL(int *a){
 	if (a==NULL){
-		//exit 0;
+		exit (0);
 	}
 }
 
 void is_NULL2(int **a){
 	if (a==NULL){
-		//exit 0;
+		exit (0);
 	}
 }
 
@@ -46,7 +46,7 @@ int main(){
 		}
 		if (i%2==al%2){
 			printf("  ");
-		}// i try make 
+		}
 		for (int j = 0; j<i+1;j++){
 			printf("%d    ", a[i][j]);
 		}
