@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include <malloc.h>
 
+void Is_Null(int * arr){
+    if (arr == NULL){
+        exit(0);
+    }
+}
+
 void printArr(int* a, size_t al) {
 	for (size_t i = 0; i < al; i++) {
 		printf("%d ", *(a + i) );
@@ -19,6 +25,7 @@ void scanArr(int* a, size_t al) {
 int* concat (int* a, int* al, int* b, int bl) {
 	//a = (int*)realloc(a, (*al + bl));
 	int* c = (int*)malloc(sizeof(int) * ((*al) + bl));
+    Is_Null(c);
 	for (int i = 0; i < *al; i++) {
 		c[i] = a[i];
 	}
@@ -39,17 +46,13 @@ int main() {
 	printf("al: ");
 	scanf("%d", &al);
 	int* a = (int*)malloc(al * sizeof(int));
-	if (a == NULL) {
-		return 0;
-	}
+    Is_Null(a);
 	scanArr(a, al);
 	
 	printf("bl: ");
 	scanf("%d", &bl);
 	int* b = (int*)malloc(sizeof(int) * bl);
-	if (b == NULL) {
-		return 0;
-	}
+    Is_Null(b);
 	scanArr(b, bl);
 
 
