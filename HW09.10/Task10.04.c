@@ -72,6 +72,7 @@ int main() {
     jmp_buf jmpBuffer;
 
     printf("%d", s2i(input, base, &jmpBuffer));
+    free(input);
 
     return 0;
 }
