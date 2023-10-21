@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <malloc.h>
 
+void Is_Null(int * arr){
+    if (arr == NULL){
+        exit(0);
+    }
+}
+
+
 void printArr(int* a, size_t al) {
 	for (size_t i = 0; i < al; i++) {
 		printf("%d ", *(a + i));
@@ -31,24 +38,19 @@ int * findSubArr(int* arr1, int arr1L, int* arr2, int arr2L) {
 
 int main() {
 	int arr1L;
-	printf("Start\n");
 	printf("arr1L:");
 	scanf("%d", &arr1L);
 	int* arr1 = (int*)malloc(sizeof(int) * arr1L);
-	if (arr1 == NULL){
-		return 0;
-	}
+    Is_Null(arr1);
 	scanArr(arr1, arr1L);
 
 	int arr2L;
 	printf("arr2L:");
 	scanf("%d", &arr2L);
 	int* arr2 = (int*)malloc(sizeof(int) * arr2L);
-	if (arr2 == NULL){
-		return 0;
-	}
+    Is_Null(arr2);
 	scanArr(arr2, arr2L);
-	printf("Answ: %ls", findSubArr(arr1, arr1L, arr2, arr2L));// i can`t print link
+	printf("Answ: %p", findSubArr(arr1, arr1L, arr2, arr2L));
 	free(arr1);
 	free(arr2);
 	return 0;
