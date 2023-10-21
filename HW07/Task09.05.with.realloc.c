@@ -11,7 +11,7 @@ void printArr(int* a, size_t al) {
 
 void is_NULL(int *a){
 	if (a==NULL){
-		//exit (0);
+		exit (0);
 	}
 }
 
@@ -23,7 +23,8 @@ int main()
 	scanf("%d", &s);
 	int arrLM=1, arrL=0;
 	int * arr1 = (int *)malloc(sizeof(int) * arrLM);
-	while(s!=0){
+    is_NULL(arr1);
+    while(s!=0){
 		if (arrL>arrLM){
 			arrLM *=2;
 			arr1 = (int *)realloc(arr1, sizeof(int) * arrLM);
@@ -36,10 +37,10 @@ int main()
 	}
 
 	if (arrL<arrLM){
-		int * arr1 = (int *)realloc(sizeof(int)*arrL);
-		free(arr1);
+		int * arr1 = (int *)realloc(arr1, sizeof(int) *arrLM);
+        is_NULL(arr1);
 	}
 	printArr(arr1, arrL);
 	free(arr1);
 	return 0;
-}//i want to try write this type, and also i didn`t read that need to use realloc))
+}

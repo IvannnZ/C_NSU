@@ -11,7 +11,7 @@ void printArr(int* a, size_t al) {
 
 void is_NULL(int *a){
 	if (a==NULL){
-		//exit (0);
+		exit (0);
 	}
 }
 
@@ -24,10 +24,10 @@ void rebild(int * arr1, int * arr2, int arrL){
 int main()
 {
 	int s;
-	//printf("s:");
 	scanf("%d", &s);
 	int arrLM=1, arrL=0;
 	int * arr1 = (int *)malloc(sizeof(int) * arrLM);
+    is_NULL(arr1);
 	while(s!=0){
 		if (arrL>arrLM){
 			arrLM *=2;
@@ -44,6 +44,7 @@ int main()
 	}
 	if (arrL<arrLM){
 		int * arr2 = (int *)malloc(sizeof(int)*arrL);
+        is_NULL(arr2);
 		rebild(arr2, arr1, arrL);
 		free(arr1);
 		arr1=arr2;
