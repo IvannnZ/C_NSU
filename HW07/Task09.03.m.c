@@ -38,7 +38,7 @@ int main(){
 		b[i]=1;
 		a[i] = b;
 	}
-	/*
+
 	for (int i = 0; i<al; i++){
 		for (int h = 0; h<((al-i-1))/2; h++){
 			printf("    ");
@@ -50,7 +50,7 @@ int main(){
 			printf("%d    ", a[i][j]);
 		}
 		printf("\n");
-	}*/
+	}
 
 	for (int i = 0; i<al; i++){
 		free(a[i]);

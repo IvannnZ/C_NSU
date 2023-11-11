@@ -46,7 +46,6 @@ int s2i(char* num, int base, jmp_buf* env) {
         result = result * base + to_int(num[c]);
         c++;
     }
-
     if (num[0] == '-') {
         result *= -1;
     }
