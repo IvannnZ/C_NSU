@@ -1,5 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <malloc.h>
 
@@ -24,7 +22,7 @@ void scanArr(int *a, size_t al) {
     }
 }
 
-int findSubArr(int *arr1, int arr1L, int *arr2, int arr2L) {
+int* findSubArr(int *arr1, int arr1L, int *arr2, int arr2L) {
     for (int i = 0; i < (arr1L - arr2L + 1); i++) {
         if (arr1[i] == arr2[0]) {
             for (int j = 1; j < arr2L; j++) {
@@ -32,25 +30,26 @@ int findSubArr(int *arr1, int arr1L, int *arr2, int arr2L) {
                     j = arr2L;
                 }
                 if (j == (arr2L - 1)) {
-                    return (i);
+                    //printf("%p, %d", &arr1[i] ,arr1[i]);
+                    return (&arr1[i]);
                 }
 
             }
         }
     }
-    return -1;
+    return NULL;
 }
 
 
 int* removeSubArr(int *arr1, int *arr1L, int *arr2, int arr2L) {
     while (1) {
-        int adrr = findSubArr(arr1, *arr1L, arr2, arr2L);
-        if (adrr != -1) {
+        int* adrr = findSubArr(arr1, *arr1L, arr2, arr2L);
+        if (adrr != NULL) {
             int move = 0;
             int *arr3 = malloc(sizeof(int) * (*arr1L - arr2L));
             Is_Null(arr3);
             for (int i = 0; i < *arr1L - arr2L; i++) {
-                if (i == adrr) {
+                if (&arr1[i] == adrr) {
                     move = arr2L;
                 }
                 arr3[i] = arr1[i + move];
