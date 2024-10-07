@@ -57,7 +57,7 @@ int main() {
 
 
     char *input = NULL;
-    int lens = 0;
+    size_t lens = 0;
 
     printf("Enter line: ");
     getline(&input, &lens, stdin);// I googling this function to make dynamic len of str

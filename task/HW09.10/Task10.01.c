@@ -60,7 +60,8 @@ int palindrom(char *str){
     return 1;
 }
 int main() {
-
+    char *a = "123456";
+    printf("%d\n", len(a));
     char *str = NULL;
     size_t lens = 0;
 
